@@ -41,11 +41,25 @@ export class Content_list {
     //
     // return output;
     let content = this._contents[index]
+
     if (content == null) {
-      return '<h4 class="error" style="color:blue;">There is no contents.</h4>'
+      return '<h4 id="error">There is no contents.</h4>'
     }
+
+    if(content.imageUrl == null) {
       return `<h2>Title: ${content.title}</h2>
+        <div class="contentImg" >
+        <h5 color="green">There is no URL for image.</h5>
+        </div>
             <h4>Author: ${content.author}</h4>
             <p>Description: ${content.body}</p>`;
+    }
+      return `<h2>Title: ${content.title}</h2>
+        <div class="contentImg" >
+         <img width="150px" height="100px" src=${this._contents[index].imageUrl}>
+        </div>
+            <h4>Author: ${content.author}</h4>
+            <p>Description: ${content.body}</p>`;
+
   }
 }
