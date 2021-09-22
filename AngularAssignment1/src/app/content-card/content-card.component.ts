@@ -19,6 +19,7 @@ export class ContentCardComponent implements OnInit {
     this.contentList.addContent({
       id: 2,
       author: "Lois Lowry",
+      imageUrl: "https://images-na.ssl-images-amazon.com/images/I/91w4nrcbAFL.jpg",
       title: "NUMBER THE STARS",
       body: "Number the stars is a wonderful story about bravery and friendship.",
     });
