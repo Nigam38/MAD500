@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Content_list} from "../helper-files/content-list";
+import {Component, Input, OnInit} from '@angular/core';
+import {Content} from "../helper-files/content_interface";
+//import {Content_list} from "../helper-files/content-list";
 
 @Component({
   selector: 'app-content-card',
@@ -8,24 +9,14 @@ import {Content_list} from "../helper-files/content-list";
 })
 export class ContentCardComponent implements OnInit {
 
-  contentList: Content_list = new Content_list({
-    id: 1,
-    author: "Nigam Patel",
-    title: "Assignment 1",
-    body: "Using TypeScript for JS.",
-  });
-
+  @Input() content: Content;
   constructor() {
-    this.contentList.addContent({
-      id: 2,
-      author: "Lois Lowry",
-      imageUrl: "https://images-na.ssl-images-amazon.com/images/I/91w4nrcbAFL.jpg",
-      title: "NUMBER THE STARS",
-      body: "Number the stars is a wonderful story about bravery and friendship.",
-    });
   }
 
   ngOnInit(): void {
   }
 
+  onImageClick(id: number) {
+
+  }
 }
