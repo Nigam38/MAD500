@@ -1,5 +1,16 @@
-<h1>Assignment</h1>
 
-<div class="box" [innerHTML]="contentList.showContent(0)"></div>
-<div class="box" [innerHTML]="contentList.showContent(1)"></div>
-<div class="box" [innerHTML]="contentList.showContent(2)"></div>
+<article class="borderBox">
+  <h1 class="title">{{ content.title }}</h1>
+  <section>
+    <div *ngIf="content.imageUrl">
+      <img src="{{ content.imageUrl }}" (click)="onImageClick(content.id)" class="poster-image" />
+    </div>
+  </section>
+  <p class="author" *ngIf="content.author != '' "><strong>Author:</strong> {{ content.author }}</p>
+  <section>
+    <p class="body" *ngIf="content.body != '' "><strong>Body:</strong> {{ content.body }}</p>
+    <p class="type" *ngIf="content.type != '' "><strong>Type:</strong> {{ content.type }}</p>
+    <p class="tags" *ngIf="content.tags.length != 0 "><strong>Tags:</strong> {{ content.tags }}</p>
+  </section>
+</article>
+

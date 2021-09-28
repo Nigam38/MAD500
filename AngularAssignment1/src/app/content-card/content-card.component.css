@@ -1,5 +1,15 @@
-.box {
+.borderBox {
   border: 2px solid darkblue;
   margin-bottom: 25px;
+  padding-left: 50px;
+  font-family: "Comic Sans MS";
 }
-
+.is-first {
+  border: 10px solid deeppink;
+}
+.poster-image{
+  height: 200px;
+  width: 150px;
+  margin: 0 auto;
+  display: inline-block;
+}
