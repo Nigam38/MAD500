@@ -9,14 +9,16 @@ import {Content} from "../helper-files/content_interface";
 })
 export class ContentCardComponent implements OnInit {
 
-  @Input() content: Content;
+  @Input() contentArray: any;
+
   constructor() {
+    this.contentArray = {};
   }
 
   ngOnInit(): void {
   }
 
-  onImageClick(id: number) {
-
+  onImageClick(): void {
+    console.log(this.contentArray.id)
   }
 }

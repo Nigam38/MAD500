@@ -1,11 +1,16 @@
+
+:host {
+  display: block;
+  width: 400px;
+  border: 2px solid red;
+  margin: 10px auto;
+  padding: 16px;
+}
 .borderBox {
-  border: 2px solid darkblue;
-  margin-bottom: 25px;
-  padding-left: 50px;
   font-family: "Comic Sans MS";
 }
-.is-first {
-  border: 10px solid deeppink;
+:host.is-last {
+  border: 2px solid black;
 }
 .poster-image{
   height: 200px;
