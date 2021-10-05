@@ -10,10 +10,14 @@ export class AppComponent {
   title = 'Nigam\'s AngularAssignment';
 
 
-
   public constructor() {
+
   }
 
   ngOnInit(): void {
   };
+
+  triggerAlertEnzo() {
+
+  }
 }

@@ -54,4 +54,10 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  searchContent(search:String): void {
+    let existType = this.contentArray.find(content => content.type.toLowerCase() == search.toLowerCase());
+    alert(existType ? `${search} exist!` : `${search} does not exist!`);
+
+  }
 }

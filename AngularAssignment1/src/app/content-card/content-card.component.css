@@ -18,3 +18,7 @@
   margin: 0 auto;
   display: inline-block;
 }
+
+.content-card {
+  border: 2px solid green;
+}
