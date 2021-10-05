@@ -18,6 +18,7 @@ export class ContentCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
   onImageClick(): void {
     console.log(this.contentArray.id)
   }

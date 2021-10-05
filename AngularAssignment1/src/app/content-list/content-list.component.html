@@ -1,2 +1,18 @@
+
+<div class="search">
+  <input #search placeholder="Search a Type value">
+  <button (click)="searchContent(search.value)">Search</button>
+</div>
+
+<app-content-card *ngFor="let item of (contentArray | filterContent:'history'); " [contentArray]="item"
+                  class="content-card {{item.type}}" >
+
+</app-content-card>
+<app-content-card *ngFor="let item of (contentArray | filterContent:'comics');" [contentArray]="item"
+                  class="content-card {{item.type}}" >
+
+</app-content-card>
+
 <app-content-card *ngFor="let item of contentArray; last as isLast" [class.is-last]="isLast" [contentArray]="item">
+
 </app-content-card>
