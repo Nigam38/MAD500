@@ -61,7 +61,7 @@ export class ContentListComponent implements OnInit {
   },{
     id: 7,
     author: "Daniel Clowes",
-    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Avengers_vs._X-Men.jpg/250px-Avengers_vs._X-Men.jpg",
+    imageUrl: "",
     type: "Comics",
     title: "Ghost World",
     body: "Ghost World is a graphic novel by Daniel Clowes.",
