@@ -1,18 +1,17 @@
-
+<form onsubmit="return false;">
 <div class="search">
-  <input #search placeholder="Search a Type value">
-  <button (click)="searchContent(search.value)">Search</button>
+  <input #search placeholder="Search a book name">
+  <button type="submit" (click)="searchContent(search.value)">Search</button>
 </div>
+  <div class="title-check">
+    {{ message }}
+  </div>
+</form>
 
-<app-content-card *ngFor="let item of (contentArray | filterContent:'history'); " [contentArray]="item"
-                  class="content-card {{item.type}}" >
-
+<app-content-card *ngFor="let item of contentArray | filterContent:'History'; last as isLast" [class.is-last]="isLast" [contentArray] = "item"
+                  [class.hightlight-me] = "search.value === item.title" class="history" >
 </app-content-card>
-<app-content-card *ngFor="let item of (contentArray | filterContent:'comics');" [contentArray]="item"
-                  class="content-card {{item.type}}" >
-
+<app-content-card *ngFor="let item of contentArray | filterContent:'Comics'; last as isLast" [class.is-last]="isLast" [contentArray] = "item"
+                  [class.hightlight-me] = "search.value === item.title" class="comics" >
 </app-content-card>
 
-<app-content-card *ngFor="let item of contentArray; last as isLast" [class.is-last]="isLast" [contentArray]="item">
-
-</app-content-card>

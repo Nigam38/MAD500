@@ -12,6 +12,16 @@
 :host.is-last {
   border: 2px solid black;
 }
+:host.history{
+  border: 2px solid #ff00ff;
+}
+:host.comics{
+  border: 2px solid #00ffff;
+}
+:host.hightlight-me{
+  background-color: #000;
+  color: #ffff00;
+}
 .poster-image{
   height: 200px;
   width: 150px;
@@ -19,6 +29,3 @@
   display: inline-block;
 }
 
-.content-card {
-  border: 2px solid green;
-}

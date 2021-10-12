@@ -8,6 +8,8 @@ import {Content} from "../helper-files/content_interface";
 })
 export class ContentListComponent implements OnInit {
 
+  message: string;
+
   contentArray = [{
     id: 1,
     author: "William Craig",
@@ -16,12 +18,12 @@ export class ContentListComponent implements OnInit {
     title: "Enemy at the Gates",
     body: "he Battle for Stalingrad is a book written by William Craig and published in 1973 by Reader's Digest Press and in 1974 by Penguin Publishing.",
     tags: []
-  }, {
+  },{
     id: 2,
     author: " Brian Michael Bendis",
     imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Avengers_vs._X-Men.jpg/250px-Avengers_vs._X-Men.jpg",
     type: "Comics",
-    title: "Avengers vs. X-Men",
+    title: "Avengers",
     body: "Avengers vs. X-Men is a 2012 crossover event that was featured in comic books published by Marvel Comics",
     tags: ['Avengers','X-Men']
   }, {
@@ -48,16 +50,47 @@ export class ContentListComponent implements OnInit {
     title: "Atomic Habits",
     body: "Atomic Habits offers a proven framework for improving-every day",
     tags: ['Good Habits']
+  },{
+    id: 6,
+    author: "Herodotus",
+    imageUrl: "",
+    type: "History",
+    title: "Histories",
+    body: "",
+    tags: []
+  },{
+    id: 7,
+    author: "Daniel Clowes",
+    imageUrl: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Avengers_vs._X-Men.jpg/250px-Avengers_vs._X-Men.jpg",
+    type: "Comics",
+    title: "Ghost World",
+    body: "Ghost World is a graphic novel by Daniel Clowes.",
+    tags: ['Novel']
   } ];
+
   constructor() {
   }
 
   ngOnInit() {
   }
 
-  searchContent(search:String): void {
-    let existType = this.contentArray.find(content => content.type.toLowerCase() == search.toLowerCase());
-    alert(existType ? `${search} exist!` : `${search} does not exist!`);
+  searchContent(title:String): void {
+    // this.message = "Book not found";
+    // for (let i = 0; i < this.contentArray.length; i++) {
+    //   if (this.contentArray[i].title === title) {
+    //     this.message = "Found your book!";
+    //     break;
+    //   }
+    // }
 
+    let existType = this.contentArray.filter(book => book.title === title);
+    if (existType.length > 0) {
+      this.message = "Book found with title."
+    } else {
+      this.message = "No book found with title.";
+    }
+   // alert(existType ? `${title} exist!` : `${title} does not exist!`);
+    this.contentArray = [...this.contentArray]
   }
+
 }

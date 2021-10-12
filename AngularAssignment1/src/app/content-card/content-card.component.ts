@@ -10,7 +10,6 @@ import {Content} from "../helper-files/content_interface";
 export class ContentCardComponent implements OnInit {
 
   @Input() contentArray: any;
-
   constructor() {
     this.contentArray = {};
   }
