@@ -28,4 +28,13 @@
   margin: 0 auto;
   display: inline-block;
 }
-
+p {
+  font-size: 18px;
+  text-align: center;
+}
+.adventure {
+  border-color: red;
+}
+.action {
+  border-color: orange;
+}
