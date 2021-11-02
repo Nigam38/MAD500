@@ -1,0 +1,27 @@
+
+div.search {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+.search input {
+  width: 50%;
+  font-size: 18px;
+  padding: 4px;
+  margin: 10px;
+}
+
+button {
+  padding: 8px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.adventure {
+  border-color: red;
+}
+.action {
+  border-color: orange;
+}
