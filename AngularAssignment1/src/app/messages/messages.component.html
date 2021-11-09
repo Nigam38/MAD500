@@ -1,0 +1,7 @@
+<h2>Message:</h2>
+
+<p class="message" *ngFor="let message of messageService.messages">
+  {{ message }}
+</p>
+<button class="btn btn-danger" (click)="messageService.clear()">CLEAR</button>
+<br /><br />
