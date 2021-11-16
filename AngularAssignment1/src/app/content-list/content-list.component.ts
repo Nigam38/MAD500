@@ -17,25 +17,17 @@ export class ContentListComponent implements OnInit {
   constructor(private contentService: ContentService) {
   }
 
-  ngOnInit(): void {
-
-    this.contentService.getContentObs().subscribe((content) => {
-      this.contentArray = content;
-    });
-
-  }
-
   searchContent(search:String):void{
     let exist = this.contentArray.find(content => content.title.toLowerCase() == search.toLowerCase());
     alert(exist ? `${search} exist!` : `${search} does not exist!`);
   }
-  addContentToList(newContentFromChild: Content): void {
-    this.contentArray.push(newContentFromChild);
-    console.log("PUSHED " + this.contentArray.length);
-    console.log("PUSHED " + newContentFromChild.title);
-    // We need to clone the array for the pipe to work
-    this.contentArray = Object.assign([], this.contentArray);
-  }
+  // addContentToList(newContentFromChild: Content): void {
+  //   this.contentArray.push(newContentFromChild);
+  //   console.log("PUSHED " + this.contentArray.length);
+  //   console.log("PUSHED " + newContentFromChild.title);
+  //   // We need to clone the array for the pipe to work
+  //   this.contentArray = Object.assign([], this.contentArray);
+  // }
 
   // searchContent(title:String): void {
   //   // this.message = "Book not found";
@@ -56,4 +48,30 @@ export class ContentListComponent implements OnInit {
   //   this.contentArray = [...this.contentArray]
   // }
 
+  addContentToList(newContentFromChild: Content): void {
+    this.contentArray.push(newContentFromChild);
+    // We need to clone the array for the pipe to work
+    this.contentArray = Object.assign([], this.contentArray);
+  }
+
+  updateContentInList(response: string) {
+    console.log(response);
+    this.getContentList();
+  }
+
+  getContentList() {
+    this.contentService.getContentObs().subscribe((content) => {
+      this.contentArray = content;
+    });
+  }
+
+  ngOnInit(): void {
+
+    // this.contentService.getContentObs().subscribe((content) => {
+    //   this.contentArray = content;
+    // });
+
+    this.getContentList();
+
+  }
 }
