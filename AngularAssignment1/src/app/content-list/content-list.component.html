@@ -20,6 +20,7 @@
 <!--                  [class.hightlight-me] = "search.value === item.title" class="comics" >-->
 <!--</app-content-card>-->
 <div class="boxChild">
+  <mat-divider></mat-divider>
 <app-content-card *ngFor="let item of contentArray; last as isLast" [class.is-last]="isLast" [contentArray] = "item"
                   [class.hightlight-me] = "search.value === item.title" class="comics" >
 </app-content-card>

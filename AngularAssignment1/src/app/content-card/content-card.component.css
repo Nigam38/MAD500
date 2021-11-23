@@ -1,13 +1,15 @@
-
 :host {
-  display: block;
-  width: 400px;
+  display: inline-block;
+  width: 300px;
+  background-color: aliceblue;
   border: 2px solid red;
   margin: 10px auto;
-  padding: 16px;
+  padding: 26px;
+  float: left;
 }
 .borderBox {
   font-family: "Comic Sans MS";
+  height: 500px;
 }
 :host.is-last {
   border: 2px solid black;
@@ -30,6 +32,9 @@
 }
 p {
   font-size: 18px;
+  text-align: center;
+}
+h1, section {
   text-align: center;
 }
 .adventure {
