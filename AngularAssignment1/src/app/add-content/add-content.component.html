@@ -1,0 +1,40 @@
+<div class="form">
+  <h1 mat-dialog-title>Books</h1>
+  <div class="mat-form">
+
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.title" placeholder="enter title" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Author</mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.author" placeholder="enter author" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Body</mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.body" placeholder="enter body" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Type</mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.type" placeholder="enter type" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Image URL</mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.imageUrl" placeholder="enter image url" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tags</mat-label>
+      <input class="mat-input" matInput [(ngModel)]="newContent.tags" placeholder="enter tags" />
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button color="warn"(click)="onNoClick()" >Cancel</button>
+      <button mat-raised-button color="accent" [mat-dialog-close]="newContent" class="mr-2">Add News</button>
+    </div>
+  </div>
+</div>
