@@ -4,21 +4,22 @@
   <div>
     <h1 appHoverStyle [borderColor]="'#000000'" class="title">{{ contentArray.title }}</h1>
   </div>
-  <section>
-    <div *ngIf="!contentArray.imageUrl">
-      <img src="https://cdn.englishbaby.com/dynamic/vocab_word/flashcard_image/0000/0000/0008/8744_1362700059_982055.png" (click)="onImageClick()" class="poster-image" />
-    </div>
-    <div *ngIf="contentArray.imageUrl">
-      <img src="{{ contentArray.imageUrl }}" (click)="onImageClick()" class="poster-image" />
-    </div>
-  </section>
+<!--  <section>-->
+<!--    <div *ngIf="!contentArray.imageUrl">-->
+<!--      <img src="https://cdn.englishbaby.com/dynamic/vocab_word/flashcard_image/0000/0000/0008/8744_1362700059_982055.png" (click)="onImageClick()" class="poster-image" />-->
+<!--    </div>-->
+<!--    <div *ngIf="contentArray.imageUrl">-->
+<!--      <img src="{{ contentArray.imageUrl }}" (click)="onImageClick()" class="poster-image" />-->
+<!--    </div>-->
+<!--  </section>-->
   <div>
     <p appHoverStyle [fontWeight] ="'bold'" class="author" *ngIf="contentArray.author != '' "><strong>Author:</strong> {{ contentArray.author }}</p>
   </div>
   <section>
-    <p class="body" *ngIf="contentArray.body != '' "><strong>Body:</strong> {{ contentArray.body }}</p>
+<!--    <p class="body" *ngIf="contentArray.body != '' "><strong>Body:</strong> {{ contentArray.body }}</p>-->
     <p class="type" *ngIf="contentArray.type != '' "><strong>Type:</strong> {{ contentArray.type }}</p>
     <p class="tags" *ngIf="contentArray.tags.length != 0 "><strong>Tags:</strong> {{ contentArray.tags }}</p>
   </section>
+  <a mat-raised-button color="primary" routerLink="../content/{{ contentArray.id }}" routerLinkActive="active">Read More</a>
 </article>
 </div>
