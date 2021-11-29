@@ -43,3 +43,7 @@ h1, section {
 .action {
   border-color: orange;
 }
+
+a, a:active, a:hover {
+  text-decoration: none;
+}

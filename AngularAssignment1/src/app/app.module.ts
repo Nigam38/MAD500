@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
@@ -18,6 +17,11 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatDialogModule} from "@angular/material/dialog";
 import { AddContentComponent } from './add-content/add-content.component';
 import {FormsModule} from "@angular/forms";
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import {RouterModule} from "@angular/router";
+
+let AddContentDialogComponent;
 
 @NgModule({
   declarations: [
@@ -29,6 +33,8 @@ import {FormsModule} from "@angular/forms";
     CreateContentComponent,
     MessagesComponent,
     AddContentComponent,
+    NotFoundComponent,
+    ContentDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,8 +49,16 @@ import {FormsModule} from "@angular/forms";
     MatDialogModule,
     MatDividerModule,
     FormsModule,
+
+    RouterModule.forRoot([
+      { path: 'content/:id', component: ContentDetailComponent },
+      { path: 'content', component: ContentListComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
+
   ],
   providers: [],
+  entryComponents: [AddContentDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
