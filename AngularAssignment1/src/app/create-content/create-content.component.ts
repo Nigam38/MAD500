@@ -5,6 +5,7 @@ import {MAT_DIALOG_DATA,
   MatDialog,
   MatDialogRef,} from "@angular/material/dialog";
 import { AddContentComponent } from '../add-content/add-content.component';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-create-content',
@@ -24,7 +25,8 @@ export class CreateContentComponent implements OnInit {
 
   constructor(
     private contentService: ContentService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -66,12 +68,29 @@ export class CreateContentComponent implements OnInit {
   //     .catch((failMessage) => console.log(failMessage));
   // }
 
+
+  openAddNewsDialog() {
+    const newsDialog = this.dialog.open(AddContentComponent, {
+      width: '600px',
+    });
+    newsDialog.afterClosed().subscribe((newsFromDialog) => {
+      console.log(newsFromDialog);
+      this.newContent = newsFromDialog;
+      if (this.newContent) {
+        this.onAddNews();
+        console.log(this.newContent);
+      }
+    });
+  }
+
   onAddNews() {
     if (
       this.newContent.body &&
       this.newContent.title &&
       this.newContent.author
     ) {
+      this.snackBar.open('Book has been added!');
+
       this.error = undefined;
       this.contentService
         .addNewContent(this.newContent)
@@ -147,19 +166,5 @@ export class CreateContentComponent implements OnInit {
         this.newContent.author ? '' : 'author'
       }`;
     }
-  }
-
-  openAddNewsDialog() {
-    const newsDialog = this.dialog.open(AddContentComponent, {
-      width: '600px',
-    });
-    newsDialog.afterClosed().subscribe((newsFromDialog) => {
-      console.log(newsFromDialog);
-      this.newContent = newsFromDialog;
-      if (this.newContent) {
-        this.onAddNews();
-        console.log(this.newContent);
-      }
-    });
   }
 }

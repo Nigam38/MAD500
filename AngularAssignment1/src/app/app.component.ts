@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Content} from "./helper-files/content_interface";
+import {LogUpdateService} from "./services/log-update.service";
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,10 @@ import {Content} from "./helper-files/content_interface";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Nigam\'s AngularAssignment';
+  title = 'Angular assignments by Nigam Patel';
 
 
-  public constructor() {
-
-  }
+  constructor(private logService: LogUpdateService) {}
 
   ngOnInit(): void {
   };

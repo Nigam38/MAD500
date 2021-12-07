@@ -13,12 +13,14 @@
   </div>
 </form>
 
-<!--<app-content-card *ngFor="let item of contentArray | filterContent:'History'; last as isLast" [class.is-last]="isLast" [contentArray] = "item"-->
-<!--                  [class.hightlight-me] = "search.value === item.title" class="history" >-->
-<!--</app-content-card>-->
-<!--<app-content-card *ngFor="let item of contentArray | filterContent:'Comics'; last as isLast" [class.is-last]="isLast" [contentArray] = "item"-->
-<!--                  [class.hightlight-me] = "search.value === item.title" class="comics" >-->
-<!--</app-content-card>-->
+
+<app-content-card *ngFor="let item of contentArray | filterContent:'History'; last as isLast" [class.is-last]="isLast" [contentArray] = "item"
+                  [class.hightlight-me] = "search.value === item.title" class="history" >
+</app-content-card>
+<mat-divider></mat-divider>
+<app-content-card *ngFor="let item of contentArray | filterContent:'Comics'; last as isLast" [class.is-last]="isLast" [contentArray] = "item"
+                  [class.hightlight-me] = "search.value === item.title" class="comics" >
+</app-content-card>
 <div class="boxChild">
   <mat-divider></mat-divider>
 <app-content-card *ngFor="let item of contentArray; last as isLast" [class.is-last]="isLast" [contentArray] = "item"
